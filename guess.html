@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUESS</title>
+</head>
+<body>
+    <center>
+    <h1>Guess the Number</h1>
+    <input type="number" id="no">
+    <input type="button" value="Check" onclick="change()">
+    <p id="rgt">Right/Wrong</p>
+    <p id="scr">score:10</p>
+    </center>
+    <script>
+        var no=document.getElementById("no")
+        var ran=Math.floor(Math.random()*10)+1
+        var rr=document.getElementById("rgt")
+        var sc=document.getElementById("scr")
+        var total=10
+        function change(){
+            var n = no.value
+            if(total!=0)
+            {
+                if(n==ran)
+                {
+                    rr.textContent="You are Right!!"
+                    alert("WON#")
+                }
+                else
+                {
+                    total=total-1
+                    rr.textContent="Wrong"
+                    sc.textContent="Score"+total
+                }
+            }
+            else
+            {
+                alert("Game is over... Try again!!")
+            }
+        }
+    </script>
+</body>
+</html>
